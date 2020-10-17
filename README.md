@@ -17,14 +17,19 @@ Usage is pretty straightforward as shown in the demo below.
 
 <img src="https://gist.githubusercontent.com/ChristianRM/91c8eb965c67cf902f59ad57443eb632/raw/9787e7950cf4c5585c8e7636957366e69dbaf340/Peek%25202020-10-16%252011-12.gif" width="800px">
 
+## Requirements
+- Node.js ^8.2.0 (npx is used)
 
 ## Release Notes
 
-### [0.1]
-- Initial release Create a project using the [official express generator](https://expressjs.com/en/starter/generator.html) with default view value.
+### [0.2.0]
+- Extension settings allows to select preferred view engine
 
 ### [0.1.1]
 - Bug fix with version error and updated readme doc
+
+### [0.1.0]
+- Initial release Create a project using the [official express generator](https://expressjs.com/en/starter/generator.html) with default view value.
 
 -----------------------------------------------------------------------------------------------------------
 

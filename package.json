@@ -9,7 +9,7 @@
 		
 	},
 	"icon": "media/icon.png",
-	"version": "0.1.1",
+	"version": "0.2.0",
 	"engines": {
 		"vscode": "^1.48.0"
 	},
@@ -26,7 +26,29 @@
 				"command": "express-skeleton.generator",
 				"title": "Express Skeleton Generator"
 			}
-		]
+		],
+		"configuration":{
+			"title": "express-skeleton",
+			"type": "object",
+			"properties": {
+				"express-skeleton.viewEngine": {
+					"type": "string",
+					"enum": [
+						"no view",
+						"dust",
+						"ejs",
+						"hbs",
+						"hjs",
+						"jade",
+						"pug",
+						"twig",
+						"vash"
+					],
+					"default": "pug",
+					"description": "Select your preferred view engine."
+				}
+			}
+		}
 	},
 	"scripts": {
 		"lint": "eslint .",

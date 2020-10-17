@@ -1,7 +1,6 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 const vscode = require('vscode');
-
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 
@@ -13,7 +12,10 @@ function activate(context) {
 	// Now provide the implementation of the command with  registerCommand
 	// The commandId parameter must match the command field in package.json
 	let disposable = vscode.commands.registerCommand('express-skeleton.generator', async function () {
-		// The code you place here will be executed every time your command is executed
+		// Check for the selected view engine
+		const { viewEngine } = vscode.workspace.getConfiguration('express-skeleton')
+		let setView;
+		viewEngine==='no view'? setView = '--no-view' : setView = '--view=' + viewEngine;
 
 		// Setting options for inputBox and openDialog
 		const inputBoxOptions = {
@@ -27,7 +29,7 @@ function activate(context) {
 
 		// User defines project name
 		const projectName = await vscode.window.showInputBox(inputBoxOptions);
-
+		// Checks project name not empty
 		if (!projectName) {
 			vscode.window.showInformationMessage('Your project name can\'t be empty');
 			return
@@ -46,12 +48,12 @@ function activate(context) {
 		// A terminal is created
 		// The specified path is defined as the current working directory of the terminal
 		const terminalOptions = {
-			'cwd': projectPath[0].path
+			'cwd': projectPath[0]
 		}
 		const terminal = vscode.window.createTerminal(terminalOptions);
 
 		// The express-generator is run with npx
-		terminal.sendText('npx express-generator ' + projectName);
+		terminal.sendText('npx express-generator ' + setView + ' ' + projectName);
 
 		// This opens the project created in the same VSCode window
 		terminal.sendText('code -r ' + projectName);
