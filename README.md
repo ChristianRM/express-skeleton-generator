@@ -1,6 +1,6 @@
 # Express Skeleton
 
-Express application generator tool, this extension helps you in the creation of an express application skeleton.
+Express skeleton generator is a command that creates a basic express js application using the [express-generator](https://expressjs.com/) tool.
 
 
 ## Features
@@ -8,6 +8,7 @@ Express application generator tool, this extension helps you in the creation of 
 Create an express application skeleton (Default view is jade).
 
 * Press `Ctrl+Shift+P` (Windows, Linux) or `Cmd+Shift+P` (macOS) to focus command palette.
+* Run the command 'Express Skeleton Generator' 
 * Type in the name of the project.
 * Select the folder where you want to create the project.
 
@@ -19,6 +20,7 @@ Usage is pretty straightforward as shown in the demo below.
 
 ## Requirements
 - Node.js ^8.2.0 (npx is used)
+- You may have to install globally 'express-generator' when using on windows
 
 ## Release Notes
 
